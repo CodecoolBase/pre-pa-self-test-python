@@ -18,7 +18,7 @@
 
 Write a function called `sum_of_even_nums` that
 
-- takes a list of numbers as its parameters
+- takes a list of numbers as its parameter
 - and returns the sum of even numbers in the list.
 
 ## `task2.py`
@@ -40,6 +40,8 @@ Mary,18
 Max,28
 ```
 
+Create simple CSV files To test your own method.
+
 Calling your function with the filename of such a file should result in `'Max'`
 as he's the oldest.
 
@@ -50,3 +52,11 @@ Write a function called `is_leap_year` that
 - takes a year as its parameter
 - decides if that year is a leap year or not
 - and returns `True` or `False` depending on the result.
+
+To determine if a year is a leap year or not follow these steps.
+
+1. If the year is evenly divisible by 4, go to step 2. Otherwise, go to step 5.
+1. If the year is evenly divisible by 100, go to step 3. Otherwise, go to step 4.
+1. If the year is evenly divisible by 400, go to step 4. Otherwise, go to step 5.
+1. The year is a leap year.
+1. The year is not a leap year.
