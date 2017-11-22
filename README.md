@@ -40,7 +40,7 @@ Mary,18
 Max,28
 ```
 
-Create simple CSV files To test your own method.
+Create simple CSV files to test your own method.
 
 Calling your function with the filename of such a file should result in `'Max'`
 as he's the oldest.
