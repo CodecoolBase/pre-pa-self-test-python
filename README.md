@@ -56,7 +56,7 @@ Write a function called `is_leap_year` that
 To determine if a year is a leap year or not follow these steps.
 
 1. If the year is evenly divisible by 4, go to step 2. Otherwise, go to step 5.
-1. If the year is evenly divisible by 100, go to step 3. Otherwise, go to step 4.
-1. If the year is evenly divisible by 400, go to step 4. Otherwise, go to step 5.
-1. The year is a leap year.
-1. The year is not a leap year.
+2. If the year is evenly divisible by 100, go to step 3. Otherwise, go to step 4.
+3. If the year is evenly divisible by 400, go to step 4. Otherwise, go to step 5.
+4. The year is a leap year.
+5. The year is not a leap year.
