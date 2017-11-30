@@ -35,11 +35,18 @@ class TestTask1(unittest.TestCase):
 class TestTask2(unittest.TestCase):
 
     def assert_find_oldest_person(self, given_text, expected_persons):
-        with tempfile.NamedTemporaryFile() as f:
+        # On Windows files that are already open for writing
+        # cannot be opened for reading again, thus we need to
+        # close the tempfile manually, then remove it after
+        # the call.
+        with tempfile.NamedTemporaryFile(delete=False) as f:
             f.write(given_text)
-            f.flush()
-            res = task2.find_oldest_person(os.path.realpath(f.name))
-            self.assertIn(res, expected_persons)
+            f.close()
+            try:
+                res = task2.find_oldest_person(os.path.realpath(f.name))
+                self.assertIn(res, expected_persons)
+            finally:
+                os.remove(f.name)
 
     def test_find_oldest_person_empty(self):
         self.assert_find_oldest_person(b'', [None])
